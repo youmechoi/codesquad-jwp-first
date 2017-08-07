@@ -25,7 +25,7 @@ public class QuestionController {
 	@GetMapping("/qna")
 	public ModelAndView list() {
 
-		ModelAndView mav = new ModelAndView("qna/list");
+		ModelAndView mav = new ModelAndView("qna/qnalist");
 		mav.addObject("qnas", qnas);
 		return mav;
 	}
@@ -38,7 +38,19 @@ public class QuestionController {
 		ModelAndView mav = new ModelAndView("qna/show");
 		mav.addObject("writer", question.getWriter());
 		mav.addObject("contents", question.getContents());
+		mav.addObject("title", question.getContents());
 
 		return mav;
 	}
+	
+	@GetMapping("/qna/form")
+	public String qnaForm() {
+		return "qna/form";
+	}
+	
+	@GetMapping("/qna/list")
+	public String qnaList() {
+		return "qna/list";
+	}
+	
 }

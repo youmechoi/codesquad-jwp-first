@@ -43,10 +43,26 @@ public class UserController {
 		return mav;
 	}
 
-	@GetMapping("/form")
-	public String form() {
+	@GetMapping("/user/form")
+	public String userForm() {
 		return "user/form";
 	}
+	
+	
+	
+	@GetMapping("/user/profile")
+	public String userProfile() {
+		return "user/profile";
+	}
+	
+	@GetMapping("/user/login")
+	public String userLogin() {
+		return "user/login";
+	}
+	
+
+	
+
 
 //	@GetMapping("{userId}/form")
 //	public ModelAndView updateForm(@PathVariable String userId) {
