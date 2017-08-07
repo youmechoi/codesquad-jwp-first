@@ -48,17 +48,17 @@ public class UserController {
 		return "user/form";
 	}
 
-	@GetMapping("{userId}/form")
-	public ModelAndView updateForm(@PathVariable String userId) {
-		User user = this.get(userId);
-				
-		ModelAndView mav = new ModelAndView("user/updateForm");
-		mav.addObject("name", user.getName());
-		mav.addObject("userId", user.getUserId());
-		mav.addObject("email", user.getEmail());
-
-		return mav;
-	}
+//	@GetMapping("{userId}/form")
+//	public ModelAndView updateForm(@PathVariable String userId) {
+//		User user = this.get(userId);
+//				
+//		ModelAndView mav = new ModelAndView("user/updateForm");
+//		mav.addObject("name", user.getName());
+//		mav.addObject("userId", user.getUserId());
+//		mav.addObject("email", user.getEmail());
+//
+//		return mav;
+//	}
 
 	// //이거는 프로필페이지에서 해당 유저 가져오는 코드 @index번의 유저를 불러
 	// @GetMapping("/users/{userId}/form")
