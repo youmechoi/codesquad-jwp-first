@@ -66,4 +66,13 @@ public class User {
 		return "User [userId=" + userId + ", password=" + password + ", name=" + name + ", email=" + email + "]";
 	}
 
+	public void update(User updateUser) {
+		 this.userId = updateUser.userId;
+         this.password = updateUser.password;
+         this.name = updateUser.name;
+         this.email = updateUser.email;
+         
+         
+	}
+
 }

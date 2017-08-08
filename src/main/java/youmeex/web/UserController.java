@@ -2,6 +2,7 @@ package youmeex.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,6 +25,23 @@ public class UserController {
 	public ModelAndView creat(User user) {
 		userRepository.save(user);
 		return new ModelAndView("redirect:/user");
+	}
+	
+	//회원 정보 수정 기능 구현 
+	@GetMapping("/{id}/updateForm")
+	public String updateForm(@PathVariable Long id, Model model) {
+//		User user = userRepository.findOne(id);
+//		model.addAttribute("users", user);
+		model.addAttribute("users", userRepository.findOne(id));
+		return "/user/updateForm";
+	}
+	
+	@PostMapping("/{id}")
+	public String update(@PathVariable Long id, User updateUser) {
+		User user = userRepository.findOne(id);
+		user.update(updateUser);
+		userRepository.save(user);
+		return "redirect:/user";
 	}
 
 	// 회원 목록 기능 구현
