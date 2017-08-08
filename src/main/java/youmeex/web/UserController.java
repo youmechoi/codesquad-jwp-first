@@ -23,7 +23,7 @@ public class UserController {
 	@PostMapping("")
 	public ModelAndView creat(User user) {
 		userRepository.save(user);
-		return new ModelAndView("redirect:/users");
+		return new ModelAndView("redirect:/user");
 	}
 
 	// 회원 목록 기능 구현
